@@ -1,0 +1,943 @@
+<html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" type="text/css" href="files/app.css">
+    </head>
+
+    <body>
+
+       	<div id="app" style="display: none">
+    		  <ul id="slide-out" class="side-nav">
+			    <li><div class="user-view">
+			      <div class="background">
+			        <img src="files/office.png">
+			      </div>
+			      <a href="#!user"><img class="circle" src="files/user.png"></a>
+			      <a href="#!name"><span class="white-text name" id="user_un">John Doe</span></a>
+			      <a href="#!email"><span class="white-text email" id="user_id">jdandturk@gmail.com</span></a>
+			    </div></li>
+			    <li><a id="dash_menu"><i class="material-icons">dashboard</i>Dashboard</a></li>
+			    <li><div class="divider"></div></li>
+			    <li><a id="groups_menu"><i class="material-icons">people</i>Groups</a></li>
+			    <li><a id="tx_menu"><i class="material-icons">attach_money</i>Transaction Requests</a></li>
+			    <li><a id="profile_menu"><i class="material-icons">account_box</i>Profile</a></li>
+			    <li><a id="settings_menu"><i class="material-icons">settings</i>Settings</a></li>
+			    <li><div class="divider"></div></li>
+			    <li><a id="logout_menu"><i class="material-icons">arrow_back</i>Logout</a></li>
+			    <li><div class="divider"></div></li>
+			  </ul>
+			  <div class="navbar-fixed">
+    		  <nav class="teal">
+			    <div class="nav-wrapper">
+			      <a href="#!" class="brand-logo center"><i class="material-icons">cloud</i>App Name</a>
+			      <ul class="left">
+			        <li><a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a></li>
+			      </ul>
+			    </div>
+			  </nav>
+			</div>
+
+			 <div class="row" id="settings_app">
+			 	<center>
+			 		<h5><i class="material-icons">settings</i>Settings</h5>
+			 	</center>
+			  <div class="row container" id="permissionCard">
+			  	 <div class="card">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="files/done.gif">
+				    </div>
+				    <div class="card-content">
+				      <span class="card-title activator grey-text text-darken-4">Great Job! Now Add Bank Accounts<i class="material-icons right teal-text">control_point</i></span>
+				      <p>Add Bank accounts and provide your consent.</p>
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">Add Bank<i class="material-icons right">close</i></span>
+
+				      <div class="row">
+				      	<br>
+				      	<div class="col s12">
+				      		  <div class="input-field col s12">
+							    <select>
+							      <option value="" disabled selected>Choose your option</option>
+							      <option value="1">psd201-bank-x--uk</option>
+							      <option value="2">psd201-bank-y--uk</option>
+							    </select>
+							    <label>Bank Selection</label>
+							  </div>
+				      	</div>
+				      	<div class="col s12">
+				      		  <div class="input-field col s12">
+							    <i class="material-icons prefix">face</i>
+					            <input id="acct_name" type="text" class="validate">
+					            <label for="acct_name">Account Name</label>
+							  </div>
+				      	</div>
+				      	<div class="col s12">
+				      		  <p>Allow this App to access your Basic account info and transactions data. App does not store this data anywhere.</p>
+				      		  <p>
+							      <input name="agreement" type="checkbox" id="test5" />
+							      <label for="test5">Agree</label>
+							    </p>
+				      	</div>
+				      	<div class="col s12">
+				      		<center>
+								<button class="btn waves-effect waves-light teal disabled" id="add_bank">Add Bank</button>
+							</center>
+				      	</div>
+				      </div>
+
+				    </div>
+				  </div>
+			  </div>
+
+			  <div class="row container" id="createJoinGroup">
+			  	 <div class="card">
+			  	 	<div class="card-content">
+		              <span class="card-title">Group Settings</span>
+		              <ul class="collapsible" data-collapsible="accordion">
+					    <li>
+					      <div class="collapsible-header"><i class="material-icons">group_add</i>Create Group</div>
+					      <div class="collapsible-body"><span>
+					      	<div class="row">
+								<div class="input-field col s12">
+									<input id="group_id" type="text" class="validate">
+									<label for="group_id">Group Name</label>
+								</div>
+								<div class="input-field col s12">
+									<input id="group_pw" type="password" class="validate">
+									<label for="group_pw">Set Password</label>
+								</div>
+								<center>
+									<button class="btn waves-effect waves-light teal create-g-btn">Create</button>
+								</center>
+							</div>
+					      </span></div>
+					    </li>
+					    <li>
+					      <div class="collapsible-header"><i class="material-icons">group</i>Join Group</div>
+					      <div class="collapsible-body"><span>
+					      	<div class="row">
+								<div class="input-field col s12">
+									<input id="group_id_j" type="text" class="validate">
+									<label for="group_id_j">Group Name</label>
+								</div>
+								<div class="input-field col s12">
+									<input id="group_pw_j" type="password" class="validate">
+									<label for="group_pw_j">Group Password</label>
+								</div>
+								<center>
+									<button class="btn waves-effect waves-light teal join-g-btn">Join</button>
+								</center>
+							</div>
+					      </span></div>
+					    </li>
+					  </ul>
+		            </div>
+
+			  	 </div>
+			  </div>
+
+			  <div class="row container" id="revokePermissions">
+			  	 <div class="card">
+			  	 	<div class="card-content">
+		              <span class="card-title">Revoke Permissions</span>
+		              <center>
+							<button class="btn waves-effect waves-light red revoke-per">Revoke Now</button>
+					  </center>
+		            </div>
+		         </div>
+		      </div>
+
+
+			</div>
+			  <div class="row container" id="dash_app" style="display: none">
+			 	<center>
+			 		<h5><i class="material-icons">dashboard</i>Dashboard</h5>
+			 	</center>
+			 	 <div class="row">
+			 	 	<div class="col s12">
+				 	 <div class="card  grey lighten-3">
+					    <div class="card-content center">
+					      <h4 id="totalSpent">$2314</h4>
+					      <p>Total Spent!</p>
+					    </div>
+					 </div>
+					 </div>
+				 </div>
+				  <div class="row">
+			 	 	<div class="col s6">
+				 	 <div class="card  grey lighten-3">
+					    <div class="card-content center">
+					      <h5 id="todaySpent">$2314</h5>
+					      <p>Spent Today!</p>
+					    </div>
+					 </div>
+					 </div>
+					 <div class="col s6">
+				 	 <div class="card  grey lighten-3">
+					    <div class="card-content center">
+					      <h5 id="totalBal">EUR 2314</h5>
+					      <p>Total Balance!</p>
+					    </div>
+					 </div>
+					 </div>
+				 </div>
+				 <div class="row">
+			 	 	<div class="col s12">
+				 	 <div class="card z-depth-3">
+					    <div id="thisMonth">
+
+					    </div>
+					 </div>
+					 </div>
+				 </div>
+				 <div class="row">
+			 	 	<div class="col s12">
+				 	 <div class="card z-depth-3">
+					    <div id="anotherUselessChart">
+
+					    </div>
+					 </div>
+					 </div>
+				 </div>
+			  </div>
+
+			  <div class="row container" id="tx_app" style="display: none">
+			 	<center>
+			 		<h5><i class="material-icons">attach_money</i>Transaction Requests</h5>
+			 	</center>
+			 	 <div class="row">
+			 	 	<div class="col s12">
+				 	 <div class="card ">
+					    <div class="card-content">
+					       <ul class="collection with-header" id="pending_req">
+
+					      </ul>
+
+					    </div>
+					 </div>
+					 </div>
+				 </div>
+				 <div class="row">
+			 	 	<div class="col s12">
+				 	 <div class="card ">
+					    <div class="card-content">
+					       <ul class="collection with-header" id="your_req">
+
+					      </ul>
+
+					    </div>
+					 </div>
+					 </div>
+				 </div>
+				   <a class="btn-floating btn-large waves-effect waves-light red placeReqModal" style="position: absolute;bottom: 5%;right: 3%"><i class="material-icons">add</i></a>
+			  </div>
+    	</div>
+    	<div id="Tfa" class="appScrean" style="display: none;">
+    		<div class="row">
+    			<br>
+    			<br>
+    			<div class="col s12 center">
+    				<h4 class="teal-text">Fill in the Email OTP!</h4>
+    			</div>
+    		</div>
+    		<div class="row">
+    				<div class="col s12 center">
+    					<img src="files/email.gif" height="30%" width="auto" class="circle">
+    				</div>
+    		</div>
+    		<div class="row container">
+    			<div class="col s12">
+    				<div class="row">
+						<div class="input-field col s12">
+							<input id="secret" type="email" class="validate">
+							<label for="secret">Email Secret</label>
+						</div>
+					</div>
+					<center>
+						<button class="btn waves-effect waves-light teal email-secret">Submit</button>
+					</center>
+    			</div>
+    		</div>
+    		<div style="position: absolute;bottom: 2%;color: black; left: 50%;transform: translate(-50%,-50%);">
+    			TROY | INDIA
+    		</div>
+    	</div>
+    	<div id="loginSignup" class="appScrean" style="display: none">
+    		<div class="row">
+    			<div class="col s12" align="center">
+    				<img src="files/logo.gif" height="30%" width="auto">
+    			</div>
+    			<div class="col s12" align="center">
+    				<h4 class="teal-text">TROY</h4>
+    			</div>
+    		</div>
+    		<div class="row">
+    		<div class="container white">
+				<ul class="tabs teal">
+					<li class="tab col s3"><a class="white-text active" href="#login">login</a></li>
+					<li class="tab col s3"><a class="white-text" href="#register">register</a></li>
+				</ul>
+				<div id="login" class="col s12">
+					<div class="col s12">
+						<div class="form-container">
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix teal-text">email</i>
+									<input id="email_log" type="email" class="validate">
+									<label for="email_log">Email</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix teal-text">lock</i>
+									<input id="password_log" type="password" class="validate">
+									<label for="password_log">Password</label>
+								</div>
+							</div>
+							<br>
+							<center>
+								<button class="btn waves-effect waves-light teal connect">Connect</button>
+								<br>
+								<br>
+								<a href="">Forgotten password?</a>
+							</center>
+						</div>
+					</div>
+				</div>
+				<div id="register" class="col s12">
+					<div class="col s12">
+						<div class="form-container">
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix teal-text">account_circle</i>
+									<input id="last_name" type="text" class="validate">
+									<label for="last_name">Name</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix teal-text">email</i>
+									<input id="email" type="email" class="validate">
+									<label for="email">Email</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix teal-text">lock</i>
+									<input id="password" type="password" class="validate">
+									<label for="password">Password</label>
+								</div>
+							</div>
+							<center>
+								<button class="btn waves-effect waves-light teal signup-btn">Submit</button>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="position: absolute;bottom: 2%;color: black; left: 50%;transform: translate(-50%,-50%);">
+    			TROY | INDIA
+    		</div>
+    	</div>
+
+    	<div id="modal1" class="modal bottom-sheet">
+		    <div class="modal-content container">
+		      <h4>Enter Amount</h4>
+		      <div class="input-field col s12">
+		      	<i class="material-icons prefix teal-text">attach_money</i>
+					<input id="valToSend" type="number">
+					<label for="valToSend">Enter Amount</label>
+		      	<center>
+		      	<button class="btn waves-effect waves-light teal tx-sub">Submit</button>
+		      </center>
+		      </div>
+		    </div>
+		  </div>
+
+		  <div id="modal2" class="modal bottom-sheet">
+		    <div class="modal-content container">
+		      <h4>Enter Amount</h4>
+		      <div class="input-field col s12">
+		      	<i class="material-icons prefix teal-text">attach_money</i>
+					<input id="valToReq" type="number">
+					<label for="valToReq">Enter Amount</label>
+		      	<center>
+		      	<button class="btn waves-effect waves-light teal tx-req">Submit</button>
+		      </center>
+		      </div>
+		    </div>
+		  </div>
+
+
+    	<div id="loader" class="appScrean" style="display: block">
+  			<img src="files/logo.gif" height="35%" width="auto" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);">
+  		</div>
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  	  <script src="https://code.highcharts.com/highcharts.js"></script>
+	  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  	  <script type="text/javascript">
+  	   $(document).ready(function(){
+
+  	   		$('select').material_select();
+  	   		$('.collapsible').collapsible();
+
+  	   		$('input[name="agreement"]').change(function () {
+			    if (this.checked) {
+			        $("#add_bank").removeClass("disabled")
+			    }
+			    else
+			    {
+			    	$("#add_bank").addClass("disabled")
+			    }
+			});
+
+  	   		$("#logout_menu").click(function(){
+  	   			window.location.reload()
+  	   		});
+
+  	   		$("#dash_menu").click(function(){
+  	   			$("#settings_app").css("display","none");
+  	   			$("#dash_app").css("display","block");
+  	   			$("#tx_app").css("display","none");
+  	   			$('.button-collapse').sideNav('hide');
+  	   			getDashvalues();
+  	   		});
+
+  	   		$("#settings_menu").click(function(){
+  	   			$("#settings_app").css("display","block");
+  	   			$("#dash_app").css("display","none");
+  	   			$("#tx_app").css("display","none");
+  	   			$('.button-collapse').sideNav('hide');
+  	   		});
+
+  	   		$("#tx_menu").click(function(){
+  	   			$("#settings_app").css("display","none");
+  	   			$("#dash_app").css("display","none");
+  	   			$("#tx_app").css("display","block");
+  	   			$('.button-collapse').sideNav('hide');
+  	   			getTxvalues();
+  	   		});
+
+
+
+//////////////////////////////////////////////////AJAX//////////////
+
+
+
+			var ip = "http://127.0.0.1:8085/";
+
+  	  		function doAjax(route,data){
+				return new Promise(function(resolve,reject){
+					var settings = {
+					  "async": true,
+					  "crossDomain": true,
+					  "url": ip+route,
+					  "method": "POST",
+					  "headers": {
+					    "content-type": "application/x-www-form-urlencoded",
+					    "cache-control": "no-cache"
+					  },
+					  "data": data
+					  }
+
+					$.ajax(settings).done(function (response) {
+					  resolve(response);
+					}).fail(function(jqXHR, textStatus, errorThrown){
+					  Materialize.toast('Error!', 4000)
+					});
+				})
+			}
+
+			function oAuth(){
+				setTimeout(function(){
+					$("#loader").css("display","none");
+					$("#loginSignup").css("display","block");
+					Materialize.toast('Secure Auth Session!', 4000)
+				},3000)
+			}
+
+			oAuth();
+
+			function getTxvalues(){
+				Materialize.toast('Getting Transactions...', 1500)
+
+				var data = {
+					"email":JSON.parse(localStorage.userdata).email,
+					"group": JSON.parse(localStorage.userdata).groupName
+				}
+
+				doAjax("showTransactions",data).then(function(result){
+					//result = JSON.parse(result);
+					if(result.length!=0)
+					{
+						var str = '<li class="collection-header"><h6>Pending Requests</h6></li>';
+						var str1 = '<li class="collection-header"><h6>Your Requests</h6></li>'
+						for(var i=0;i<result.length;i++)
+						{
+							if(result[i].email!=localStorage.email)
+							{
+								str+= '<li class="collection-item avatar processTx"> <i class="material-icons teal circle">attach_money</i> <span class="title">'+result[i].email+'</span> <p class="tid_t">EUR '+result[i].amount+' <br> '+result[i].TID+' </p></li>'
+							}
+							else
+							{
+								str1+= '<li class="collection-item avatar"> <i class="material-icons red circle">attach_money</i> <span class="title">'+result[i].email+'</span> <p>EUR '+result[i].amount+' <br> '+result[i].TID+' </p></li>'
+							}
+
+						}
+						$("#pending_req").html(str);
+						$("#your_req").html(str1);
+						Materialize.toast('Fetched!', 1500)
+					}
+					else
+					{
+						Materialize.toast('No Transactions!', 4000)
+					}
+				}).catch(function(){
+					Materialize.toast('Error in Fetching Data!', 4000)
+				});
+			}
+
+			function arunKafx(a){
+				var acc = {}
+				for(key in a)
+				{
+
+					acc[key] = {
+						"housing" : 0,
+						"travel" : 0,
+						"insurance" : 0,
+						"food" : 0,
+						"health" : 0,
+						"entertainment" : 0,
+						"apparel" : 0,
+						"care" : 0,
+						"others" : 0,
+						"groupTransfer" : 0
+					}
+					for(var j = 0; j < a[key].length; j++){
+						acc[key][a[key][j].details.description] += parseFloat(a[key][j].details.value.amount);
+				    }
+				}
+				var total = {
+					"housing" : 0,
+					"travel" : 0,
+					"insurance" : 0,
+					"food" : 0,
+					"health" : 0,
+					"entertainment" : 0,
+					"apparel" : 0,
+					"care" : 0,
+					"others" : 0,
+					"groupTransfer" : 0
+				}
+				var array = []
+				for(key in acc)
+				{
+					array.push(key);
+					total["housing"] += parseFloat(acc[key]["housing"]);
+					total["travel"] += parseFloat(acc[key]["travel"]);
+					total["insurance"] += parseFloat(acc[key]["insurance"]);
+					total["food"] += parseFloat(acc[key]["food"]);
+					total["health"] += parseFloat(acc[key]["health"]);
+					total["entertainment"] += parseFloat(acc[key]["entertainment"]);
+					total["apparel"] += parseFloat(acc[key]["apparel"]);
+					total["care"] += parseFloat(acc[key]["care"]);
+					total["others"] += parseFloat(acc[key]["others"]);
+					total["groupTransfer"] += parseFloat(acc[key]["groupTransfer"]);
+
+				}
+
+				var sum_up_all = 0
+				for(i in total)
+				{
+					sum_up_all += parseFloat(total[i]);
+				}
+
+				var analysisVal = {
+									"acc":acc,
+									"totalAmt":total,
+									"sum_up_all":sum_up_all,
+									"keys":array
+				}
+				return analysisVal;
+			}
+
+
+
+			function getDashvalues(){
+				Materialize.toast('Performing Analysis!', 1500)
+
+				var data = {
+					"email":JSON.parse(localStorage.userdata).email,
+					"group":JSON.parse(localStorage.userdata).groupName,
+					"bank":JSON.parse(localStorage.userdata).bankDetails[0].bank,
+					"account":JSON.parse(localStorage.userdata).bankDetails[0].account,
+					"secret": JSON.parse(localStorage.userdata).secret
+				}
+
+				doAjax("getTransactionReceipts",data).then(function(result){
+					if(result!="ERROR")
+					{
+						console.log(result);
+						var values = arunKafx(result);
+						console.log(values);
+						setTimeout(()=>{
+							$("#totalSpent").html("EUR " + values.sum_up_all);
+							$("#todaySpent").html("EUR " + values.sum_up_all);
+							renderChart1(values.totalAmt);
+							renderChart2(values.acc,values.keys);
+						},1200);
+					}
+					else
+					{
+						Materialize.toast('Error in Creating!', 4000)
+					}
+				}).catch(function(){
+					Materialize.toast('Error in Creating!', 4000)
+				});
+
+			}
+
+			function renderChart1(dataVal)
+			{
+					Highcharts.chart('thisMonth', {
+						    chart: {
+						        plotBackgroundColor: null,
+						        plotBorderWidth: null,
+						        plotShadow: false,
+						        type: 'pie'
+						    },
+						    title: {
+						        text: 'This Month\'s Category Split'
+						    },
+						    tooltip: {
+						        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+						    },
+						    plotOptions: {
+						        pie: {
+						            allowPointSelect: true,
+						            cursor: 'pointer',
+						            dataLabels: {
+						                enabled: true,
+						                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+						                style: {
+						                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+						                }
+						            }
+						        }
+						    },
+						    series: [{
+						        name: 'Categories',
+						        colorByPoint: true,
+						        data: [{
+						            name: 'Housing',
+						            y: dataVal.housing
+						        }, {
+						            name: 'Travel',
+						            y: dataVal.travel
+						        }, {
+						            name: 'Care',
+						            y: dataVal.care
+						        }, {
+						            name: 'Food',
+						            y: dataVal.food
+						        }, {
+						            name: 'Group Transfer',
+						            y: dataVal.groupTransfer
+						        }, {
+						            name: 'Entertainment',
+						            y: dataVal.entertainment
+						        }, {
+						            name: 'Apparel',
+						            y: dataVal.apparel
+						        }]
+						    }]
+						});
+
+			}
+
+
+
+			function renderChart2(dataVal,keys)
+			{
+				var renderData =[];
+				console.log(keys)
+
+				for(var i = 0; i < keys.length; i++)
+				{
+					renderData.push({"name":keys[i],
+									 "data":[dataVal[keys[i]].housing,dataVal[keys[i]].travel,dataVal[keys[i]].care,dataVal[keys[i]].food,dataVal[keys[i]].entertainment,dataVal[keys[i]].groupTransfer,dataVal[keys[i]].apparel]
+									});
+				}
+
+				Highcharts.chart('anotherUselessChart', {
+				    chart: {
+				        type: 'bar'
+				    },
+				    title: {
+				        text: 'Bank Expenditure Split'
+				    },
+				    xAxis: {
+				        categories: ['Housing', 'Travel', 'Care', 'Food', 'Entertainment','Group Transfer','Apparel']
+				    },
+				    yAxis: {
+				        min: 0,
+				        title: {
+				            text: 'Categories'
+				        }
+				    },
+				    legend: {
+				        reversed: true
+				    },
+				    plotOptions: {
+				        series: {
+				            stacking: 'normal'
+				        }
+				    },
+				    series: renderData
+				});
+			}
+//////////////////////////////////////////////PERMISSION///////////////////
+
+			$(".tx-sub").click(function(){
+				Materialize.toast('Performing Transactions', 1500)
+
+				var data = {
+					"email":localStorage.tx_email,
+					"TID": localStorage.tx_tid,
+					"group":JSON.parse(localStorage.userdata).groupName,
+					"selfBank":JSON.parse(localStorage.userdata).bankDetails[0].bank,
+					"selfAccount":JSON.parse(localStorage.userdata).bankDetails[0].account,
+					"amount": $("#valToSend").val()
+				}
+
+				doAjax("completeTransaction",data).then(function(result){
+					if(result=="OKAY")
+					{
+						$('#modal1').modal('close');
+						getTxvalues();
+						Materialize.toast('Transaction Succesful!', 1500)
+					}
+					else
+					{
+						$('#modal1').modal('close');
+						Materialize.toast('Error in Transaction!', 4000)
+					}
+				}).catch(function(){
+					$('#modal1').modal('close');
+					Materialize.toast('Error in Transaction!', 4000)
+				});
+			});
+
+			$(".tx-req").click(function(){
+				//Materialize.toast('Submitting Requests to Group', 1500)
+				console.log("asdf")
+
+				var data = {
+					"email":JSON.parse(localStorage.userdata).email,
+					"group":JSON.parse(localStorage.userdata).groupName,
+					"amount": $("#valToReq").val()
+				}
+
+				doAjax("placeTransaction",data).then(function(result){
+					if(result=="OKAY")
+					{
+						$('#modal2').modal('close');
+						getTxvalues();
+						Materialize.toast('Transaction Placed!', 1500)
+					}
+					else
+					{
+						$('#modal2').modal('close');
+						Materialize.toast('Error!', 1500)
+					}
+				}).catch(function(){
+					$('#modal2').modal('close');
+					Materialize.toast('Error!', 4000)
+				});
+			});
+
+
+			$("#pending_req").on("click","li.processTx",function(){
+				localStorage.tx_email = $(this).find(".title").html();
+				localStorage.tx_tid = ($(this).find(".tid_t").html()).split(" ")[3];
+				console.log(($(this).find(".tid_t").html()).split(" ")[3])
+				$('#modal1').modal('open');
+			});
+
+			$(".placeReqModal").click(function(){
+				$('#modal2').modal('open');
+			});
+
+			$(".create-g-btn").click(function(){
+				Materialize.toast('Wait! Creating...', 1500)
+
+				var data = {
+					"email":JSON.parse(localStorage.userdata).email,
+					"secret": JSON.parse(localStorage.userdata).secret,
+					"group":$("#group_id").val(),
+					"password":$("#group_pw").val()
+				}
+
+				doAjax("createGroup",data).then(function(result){
+					if(result.email!=undefined)
+					{
+						localStorage.userdata = JSON.stringify(result);
+						Materialize.toast('Group Created Succesfully!', 1500)
+					}
+					else
+					{
+						Materialize.toast('Error in Creating!', 4000)
+					}
+				}).catch(function(){
+					Materialize.toast('Error in Creating!', 4000)
+				});
+			});
+
+
+			$(".join-g-btn").click(function(){
+				Materialize.toast('Wait! Searching...', 1500)
+
+				var data = {
+					"email":JSON.parse(localStorage.userdata).email,
+					"name": JSON.parse(localStorage.userdata).name,
+					"group":$("#group_id_j").val(),
+					"password":$("#group_pw_j").val()
+				}
+
+				doAjax("joinGroup",data).then(function(result){
+					if(result.email!=undefined)
+					{
+						localStorage.userdata = JSON.stringify(result);
+						Materialize.toast('Joined Group!', 1500);
+					}
+					else if(result=="NOT")
+					{
+						Materialize.toast('Cannot Join More than 1 group!', 4000);
+					}
+					else
+					{
+						Materialize.toast('Error in Joining!', 4000);
+					}
+				}).catch(function(){
+					Materialize.toast('Error in Joining!', 4000)
+				});
+			});
+
+
+
+			$("#add_bank").click(function(){
+				Materialize.toast('Wait! Adding...', 1500)
+				var bnk = $("select").val()==1?"psd201-bank-x--uk":"psd201-bank-y--uk";
+
+				var data = {
+					"email":JSON.parse(localStorage.userdata).email,
+					"account": $("#acct_name").val(),
+					"bank":bnk,
+					"permission":true
+				}
+
+				doAjax("addBankAccount",data).then(function(result){
+					if(result.email!=undefined)
+					{
+						localStorage.userdata = JSON.stringify(result);
+						Materialize.toast('Hurray! Bank Added Succesfully!', 1500)
+					}
+					else
+					{
+						Materialize.toast('Error in Adding!', 4000)
+					}
+				}).catch(function(){
+					Materialize.toast('Error in Adding!', 4000)
+				});
+			});
+
+
+
+			$(".connect").click(function(){
+				Materialize.toast('Hold your horses!', 1500)
+				var data = {
+					"email":$("#email_log").val(),
+					"password": $("#password_log").val()
+				}
+
+				doAjax("login",data).then(function(result){
+					if(result=="OKAY")
+					{
+						localStorage.email = $("#email_log").val();
+						$("#loginSignup").css("display","none");
+						$("#Tfa").css("display","block");
+						Materialize.toast('Yeah! Good Job!', 1500)
+					}
+					else
+					{
+						Materialize.toast('Error!', 4000)
+					}
+				})
+			});
+
+			$(".signup-btn").click(function(){
+
+				Materialize.toast('Submitting Data!', 1500)
+				var data = {
+					"email":$("#email").val(),
+					"password": $("#password").val(),
+					"name": $("#last_name").val()
+				}
+
+				doAjax("signup",data).then(function(result){
+					if(result=="OKAY")
+					{
+						Materialize.toast('Signup Succesful! Login to Continue', 4000)
+					}
+					else
+					{
+						Materialize.toast('Error!', 4000)
+					}
+				}).catch(function(){
+					console.log("adsf");
+				})
+			});
+
+			$(".email-secret").click(function(){
+
+				Materialize.toast('Verifying!', 1500)
+				var data = {
+					"token":$("#secret").val(),
+					"email":localStorage.email
+				}
+
+				doAjax("verifyTwo",data).then(function(result){
+					if(result.email!=undefined)
+					{
+						localStorage.userdata = JSON.stringify(result);
+						$("#Tfa").css("display","none");
+						$("#app").css("display","block");
+						Materialize.toast('Two Factor Login Succesful!', 1500)
+						$("#user_un").html(JSON.parse(localStorage.userdata).name);
+						$("#user_id").html(JSON.parse(localStorage.userdata).email);
+					}
+					else
+					{
+						Materialize.toast('Error in Verifying!', 4000)
+					}
+				}).catch(function(){
+					console.log("adsf");
+				})
+			});
+
+
+  	   		$(".button-collapse").sideNav();
+	  	  	$('.modal').modal();
+});
+
+  	  </script>
+    </body>
+  </html>
